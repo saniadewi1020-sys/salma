@@ -3,40 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keindahan Mawar</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Jatuh Hati - Raisa 💖</title>
 
 <style>
-
-/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  background: linear-gradient(to bottom, #ff9ecf, #ff4d6d, #c9184a);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
   color: white;
+  text-align: center;
   overflow-x: hidden;
+  background: linear-gradient(135deg, #ffd1dc, #ffc0cb, #ffb6c1);
 }
 
-/* ===== COVER ===== */
+/* dreamy blur lights */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: rgba(255,255,255,0.25);
+  filter: blur(120px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+body::before {
+  top: -100px;
+  left: -100px;
+}
+
+body::after {
+  bottom: -120px;
+  right: -120px;
+}
+
+/* COVER */
 .cover {
-  height: 100vh;
-  background: url("mawarr.jpg") center/cover no-repeat;
+  position: relative;
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  position: relative;
 }
 
 .cover::after {
@@ -44,107 +56,78 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(255,105,180,0.6), rgba(200,0,60,0.7));
-}
-
-.cover-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  animation: fadeIn 2s ease;
+  background: rgba(255,182,193,0.5);
 }
 
 .cover h1 {
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  position: relative;
+  font-size: 36px;
+  z-index: 1;
 }
 
-.cover p {
-  margin-top: 12px;
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-  background: #ffffff;
-  color: #c9184a;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #ffe5ec;
-  transform: scale(1.08);
-}
-
-/* ===== SECTION ===== */
+/* CONTENT */
 section {
-  padding: 70px 25px;
+  padding: 80px 25px;
 }
 
-.container {
-  max-width: 800px;
+.text {
+  max-width: 650px;
   margin: auto;
+  line-height: 1.9;
+  font-size: 17px;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 600;
-  font-size: 24px;
-}
-
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.15);
-  padding: 22px;
-  border-radius: 18px;
-  backdrop-filter: blur(10px);
+/* Scroll animation */
+.fade-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
   margin-bottom: 25px;
-  animation: slideUp 1.5s ease;
+}
+
+.fade-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Spotify Card */
+.spotify {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 25px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 40px;
+  backdrop-filter: blur(15px);
+  transition: 0.4s;
+}
+
+.spotify:hover {
+  transform: scale(1.05);
+}
+
+.spotify a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  background: white;
+  color: #ff4f81;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card h3 {
-  margin-bottom: 12px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.card p {
-  line-height: 1.8;
-  font-size: 15px;
-  font-weight: 300;
+.spotify a:hover {
+  background: #ff4f81;
+  color: white;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
+  margin-top: 80px;
   padding: 20px;
-  background: rgba(0,0,0,0.3);
   font-size: 14px;
-  letter-spacing: 1px;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  background: rgba(255,192,203,0.4);
 }
 
 </style>
@@ -152,63 +135,75 @@ footer {
 
 <body>
 
-<!-- ===== COVER ===== -->
 <div class="cover">
-  <div class="cover-content">
-    <h1>KEINDAHAN MAWAR</h1>
-    <p>Bunga favorit gadis dengan senyuman manis</p>
-    <a href="#materi" class="btn">Jelajahi</a>
-  </div>
+  <h1>Jatuh Hati 💕</h1>
 </div>
 
-<!-- ===== MATERI ===== -->
-<section id="materi">
-  <div class="container">
-    <h2>Pesona Mawar yang Anggun</h2>
+<section>
+  <div class="text">
+    <h2 class="fade-text">Raisa</h2>
 
-    <div class="card">
-      <h3>🌹 Mawar dan Keindahannya</h3>
-      <p>
-        Mawar adalah bunga yang dikenal karena keindahan dan kelembutannya.
-        Kelopak yang tersusun rapi menciptakan bentuk yang anggun dan memikat.
-        Warna merah dan merah muda melambangkan cinta, kelembutan, serta ketulusan hati.
-      </p>
-    </div>
+    <p class="fade-text">
+      Ada rasa yang datang tanpa suara,
+      perlahan namun pasti memenuhi ruang hati.
+    </p>
 
-    <div class="card">
-      <h3>🤍 Bunga Favorit Gadis</h3>
-      <p>
-        Bagi banyak gadis, mawar adalah bunga favorit yang penuh makna.
-        Seperti senyuman manis yang tulus, mawar mampu menghadirkan
-        rasa bahagia dan kehangatan tanpa perlu banyak kata.
-      </p>
-    </div>
+    <p class="fade-text">
+      Seperti senja yang tak pernah gagal membuat langit memerah,
+      perasaan itu tumbuh diam-diam…
+      hangat, lembut, dan menenangkan.
+    </p>
 
-    <div class="card">
-      <h3>✨ Senyuman Seindah Mawar</h3>
-      <p>
-        Ketika seorang gadis tersenyum sambil memegang mawar,
-        terlihat perpaduan keindahan alam dan keindahan perasaan.
-        Mawar menjadi simbol kelembutan yang memperindah setiap momen.
-      </p>
-    </div>
+    <p class="fade-text">
+      "Jatuh Hati" adalah tentang degup yang berubah,
+      tentang tatapan yang tak lagi biasa,
+      dan tentang harapan kecil yang mulai berani bermimpi.
+    </p>
 
-    <div class="card">
-      <h3>🌺 Filosofi Mawar</h3>
-      <p>
-        Mawar memiliki duri di balik kelopaknya yang indah.
-        Hal ini mengajarkan bahwa kelembutan dan kekuatan dapat berjalan bersama.
-        Seperti kehidupan, ada tantangan, namun tetap indah jika dijalani dengan senyuman.
-      </p>
-    </div>
+    <p class="fade-text">
+      Karena kadang,
+      jatuh hati bukan tentang seberapa cepat ia datang,
+      tapi seberapa dalam ia menetap.
+    </p>
+  </div>
 
+  <div class="spotify fade-text">
+    <p>Dengarkan Jatuh Hati - Raisa 🎧</p>
+    <a href="https://open.spotify.com/search/Jatuh%20Hati%20Raisa" target="_blank">
+      Open Spotify
+    </a>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
-  Salma nafisah rosmiati XI-12
+  © 2026 - Sebuah Cerita Tentang Perasaan 💖
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade-text');
+
+const appearOptions = {
+  threshold: 0.3
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add('show');
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
 
 </body>
 </html>
